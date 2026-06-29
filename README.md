@@ -62,12 +62,12 @@ Each image is a handwritten digit rendered at 8×8 resolution. The pixel values 
 
 ### Sample Digits
 
-![25 sample digits from the MNIST 8×8 dataset](01_sample_digits.png)
+![25 sample digits from the MNIST 8×8 dataset](evaluation%20images/01_sample_digits.png)
 *25 sample images from the MNIST 8×8 dataset. Each image is 64 pixel values rendered as an 8×8 grayscale grid. Notice the variation in handwriting — the model learns from all of it.*
 
 ### Class Distribution
 
-![Class distribution across all 10 digit classes](02_class_distribution.png)
+![Class distribution across all 10 digit classes](evaluation%20images/02_class_distribution.png)
 *Class distribution across all 10 digit classes. Range: 174–183 images per digit. The dataset is well balanced — accuracy is a trustworthy metric here.*
 
 ---
@@ -91,7 +91,7 @@ I trained all seven algorithms on identical data, evaluated them on identical te
 - KNN: K=5 with StandardScaler applied
 - SVM: RBF kernel, C=10, gamma='scale'
 
-![Accuracy comparison across all 7 algorithms](05_accuracy_comparison.png)
+![Accuracy comparison across all 7 algorithms](evaluation%20images/05_accuracy_comparison.png)
 *Accuracy comparison across all 7 algorithms. The gap between Linear Regression and everything else is the algorithm-problem fit argument made visual.*
 
 ---
@@ -125,14 +125,14 @@ SVM finds the maximum-margin boundary between digit classes using the RBF (Radia
 
 ### SVM Confusion Matrix — Single View
 
-![SVM confusion matrix](03_confusion_matrix_svm.png)
+![SVM confusion matrix](evaluation%20images/03_confusion_matrix_svm.png)
 *SVM confusion matrix — 540 test images. 10 total mistakes. The 3–8–9 cluster accounts for most errors, caused by shared curved strokes at 8×8 resolution.*
 
 Of SVM's 10 mistakes, most fall in the 3–8–9 cluster. These digits share curved shapes in the lower half of the 8×8 grid. At this low resolution, those curves blur together and become ambiguous. This is a resolution limitation, not a model failure. With 28×28 resolution, those strokes would be distinct. But even SVM can't resolve ambiguity that doesn't exist in the data.
 
 ### All 7 Confusion Matrices — Side by Side
 
-![All 7 confusion matrices](04_confusion_matrices_all_7.png)
+![All 7 confusion matrices](evaluation%20images/04_confusion_matrices_all_7.png)
 *All 7 confusion matrices side by side. Linear Regression (top-left): color scattered across every cell — the model guesses in all directions. SVM (bottom-right): bright diagonal, nearly invisible off-diagonal. The visual distance between these two panels is the entire story of algorithm selection.*
 
 The contrast is dramatic:
@@ -150,7 +150,7 @@ The progression across these seven panels tells the entire story: from chaotic g
 
 ## Full Evaluation Summary
 
-![Evaluation summary with grouped bar chart and color-coded table](evaluation_summary.png)
+![Evaluation summary with grouped bar chart and color-coded table](evaluation%20images/evaluation_summary.png)
 *Complete evaluation summary — grouped bar chart showing all 4 metrics per algorithm, and color-coded comparison table. Green = above 95%. Yellow = 80–95%. Red = below 80%.*
 
 The color-coded table reveals the story behind raw accuracy:
@@ -220,12 +220,13 @@ The side-by-side confusion matrices tell a story that numbers alone can't. Going
 ```
 mnist-digit-recognizer/
 ├── DigiReco.ipynb                    # Complete notebook: data → training → evaluation
-├── 01_sample_digits.png              # 25 sample images from the dataset
-├── 02_class_distribution.png         # Bar chart: images per digit class
-├── 03_confusion_matrix_svm.png       # SVM confusion matrix (detailed view)
-├── 04_confusion_matrices_all_7.png   # All 7 confusion matrices side by side
-├── 05_accuracy_comparison.png        # Accuracy bar chart across all algorithms
-├── evaluation_summary.png            # Grouped metrics and color-coded table
+├── evaluation images/
+│   ├── 01_sample_digits.png          # 25 sample images from the dataset
+│   ├── 02_class_distribution.png     # Bar chart: images per digit class
+│   ├── 03_confusion_matrix_svm.png   # SVM confusion matrix (detailed view)
+│   ├── 04_confusion_matrices_all_7.png # All 7 confusion matrices side by side
+│   ├── 05_accuracy_comparison.png    # Accuracy bar chart across all algorithms
+│   └── evaluation_summary.png        # Grouped metrics and color-coded table
 └── README.md                         # This file
 ```
 
