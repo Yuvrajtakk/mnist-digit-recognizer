@@ -203,7 +203,7 @@ And I learned that theory-first works. Four days understanding algorithms before
 ```
 mnist-digit-recognizer/
 ├── DigiReco.ipynb                      # Complete pipeline: load → train → evaluate
-├── evaluation images/
+├── Evaluation Images/
 │   ├── 01_sample_digits.png            # 25 sample digit images
 │   ├── 02_class_distribution.png       # Class balance bar chart
 │   ├── 03_confusion_matrix_svm.png     # SVM confusion matrix detail
