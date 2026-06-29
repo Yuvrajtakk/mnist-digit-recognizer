@@ -60,12 +60,12 @@ On June 29, I built and completed the full MNIST pipeline in a single session in
 
 ### Sample Digits
 
-![25 sample digits from the MNIST 8×8 dataset](evaluation%20images/01_sample_digits.png)
+![25 sample digits from the MNIST 8×8 dataset](Evaluation%20Images/01_sample_digits.png)
 *25 sample images from the MNIST 8×8 dataset. Each image is 64 pixel values rendered as an 8×8 grayscale grid. Notice the variation in handwriting — the model learns from all of it.*
 
 ### Class Distribution
 
-![Class distribution across all 10 digit classes](evaluation%20images/02_class_distribution.png)
+![Class distribution across all 10 digit classes](Evaluation%20Images/02_class_distribution.png)
 *Class distribution across all 10 digit classes. Range: 174–183 images per digit. Balanced dataset — accuracy is a trustworthy metric here.*
 
 ---
@@ -87,7 +87,7 @@ Hyperparameters tuned during build:
 - KNN: K=5 with StandardScaler applied
 - SVM: RBF kernel, C=10, gamma='scale'
 
-![Accuracy comparison across all 7 algorithms](evaluation%20images/05_accuracy_comparison.png)
+![Accuracy comparison across all 7 algorithms](Evaluation%20Images/05_accuracy_comparison.png)
 *Accuracy comparison across all 7 algorithms. The gap between Linear Regression and everything else is the algorithm-problem fit argument made visual.*
 
 ---
@@ -121,14 +121,14 @@ RBF kernel projects 64-dimensional pixel data into higher-dimensional space wher
 
 ### SVM — Detailed View
 
-![SVM confusion matrix](evaluation%20images/03_confusion_matrix_svm.png)
+![SVM confusion matrix](Evaluation%20Images/03_confusion_matrix_svm.png)
 *SVM confusion matrix — 540 test images, 10 total mistakes. The 3–8–9 cluster accounts for most errors — digits that share curved strokes at 8×8 resolution.*
 
 Of SVM's 10 mistakes, most fall in the 3–8–9 cluster. These digits share curved shapes in the lower half of the 8×8 grid. At this resolution, those curves blur together. This is a data resolution limitation, not a model failure.
 
 ### All 7 Algorithms — Side by Side
 
-![All 7 confusion matrices](evaluation%20images/04_confusion_matrices_all_7.png)
+![All 7 confusion matrices](Evaluation%20Images/04_confusion_matrices_all_7.png)
 *All 7 confusion matrices. Linear Regression (top-left): color scattered everywhere, no diagonal. SVM (bottom-right): razor-sharp diagonal, near-invisible off-diagonal. The visual distance between these two panels is the entire story of algorithm selection.*
 
 The progression is clear:
@@ -144,7 +144,7 @@ The progression is clear:
 
 ## Full Evaluation Summary
 
-![Evaluation summary](evaluation%20images/evaluation_summary.png)
+![Evaluation summary](Evaluation%20Images/evaluation_summary.png)
 *Grouped bar chart showing all 4 metrics per algorithm, and color-coded comparison table. Green = above 95%. Yellow = 80–95%. Red = below 80%.*
 
 The three zones tell the story. Red (Linear Regression, Naive Bayes): not trustworthy. Yellow (Decision Tree): useful but limited. Green (Logistic Regression, Random Forest, KNN, SVM): all viable. The choice between green-zone algorithms depends on context — interpretability, inference speed, and computational budget — not just accuracy.
