@@ -3,7 +3,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Yuvrajtakk/mnist-digit-recognizer/blob/main/DigiReco.ipynb)
 
 **Yuvraj Tak** | B.Tech CSE-AI, Anand International College of Engineering
-**Internship:** AI/ML at Watsoo Express Pvt. Ltd. | Mentor: Ankit Gupta | June – August 2026
+**Internship:** AI/ML at Watsoo Express Pvt. Ltd. | Mentor: Ankit Gupta 
 
 ---
 
